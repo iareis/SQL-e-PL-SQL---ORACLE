@@ -1,2 +1,2 @@
-# SQL-e-PL-SQL---ORACLE
+# SQL_PL-SQL_---ORACLE
 Iniciando a formação para Banco de Dados ORACLE.

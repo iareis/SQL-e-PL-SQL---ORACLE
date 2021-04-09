@@ -1,0 +1,46 @@
+
+
+SELECT * FROM TCONTRATO WHERE COD_CONTRATO = 2;
+
+<!-- ALTERAR REGISTRO NA TABELA -->
+
+UPDATE TCONTRATO SET DESCONTO = 10
+WHERE COD_CONTRATO = 2;
+
+UPDATE TCONTRATO SET
+DESCONTO = 20,
+DATA = '05/01/2013',
+TOTAL = 2500
+WHERE COD_CONTRATO = 2;
+
+<!-- ------------------------------------- -->
+
+UPDATE TALUNO SET 
+CIDADE = 'CANOAS' /*aqui é o termo que será alterado*/
+WHERE Upper(CIDADE) = 'IVOTI';
+
+UPDATE TALUNO SET 
+NOME = 'FRIDA'
+WHERE COD_ALUNO = 5;
+
+<!-- ------------------------------------- -->
+
+SELECT * FROM TCURSO;
+
+UPDATE TCURSO SET 
+VALOR = 499.99 /*SEPARADOR DECIMAL PADRÃO AMERICANO É UM ponto E NÃO UMA vírgula*/
+WHERE COD_CURSO = 1;
+
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+

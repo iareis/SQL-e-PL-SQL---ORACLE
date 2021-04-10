@@ -142,34 +142,89 @@ OR DESCONTO IS NULL;
 SELECT * FROM TITEM;
 
 SELECT * FROM TITEM
-WHERE COD_CURSO IN (1, 2, 3);
+WHERE COD_CURSO IN (1, 2, 4);
 
 SELECT * FROM TITEM
 WHERE COD_CURSO NOT IN (1, 2, 3);
 
+SELECT * FROM TCURSO;
 
+INSERT INTO TCURSO VALUES (5, 'WINDOWS', 1000, 50);
+
+<!-- ----
+COMPARANDO DADOS DE UMA TABELA COM BASE EM OUTRA TABELA
+Podendo verificar os CURSOS NÃO VENDIDOS por exemplo    
+---- -->
+
+SELECT * FROM TCURSO
+WHERE COD_CURSO NOT IN (SELECT COD_CURSO FROM TITEM);
+
+<!-- ---- ou verificar os cursos VENDIDOS ---- -->
+
+SELECT * FROM TCURSO
+WHERE COD_CURSO IN (SELECT COD_CURSO FROM TITEM);
+
+<!-- ---- Podemos fazer o IN / NOT IN de outras maneiras  ---- -->
+
+SELECT * FROM TITEM
+WHERE COD_CURSO=1
+OR COD_CURSO=2
+OR COD_CURSO=4;
+
+<!-- ---- Pode-se realizar filtros 9SELECT) conforme letra ou palavra desejada ---- -->
+
+SELECT * FROM TCURSO WHERE NOME LIKE 'W%';
+/*mostra apenas cursos iniciados com W*/
+
+SELECT * FROM TCURSO WHERE NOME LIKE '%JAVA%';
+/*retorna cursos que contenham JAVA*/
+
+SELECT * FROM TCURSO WHERE NOME LIKE '%FACES';
+/*retorna cursos que terminem com FACES*/
+
+SELECT * FROM TCURSO WHERE NOME LIKE '_I%';
+/*retorna cursos que contenham a letra I na segunda posição*/
 
 <!-- ----  ---- -->
 
+SELECT * FROM TCURSO;
 
+COMMIT;
 
+ALTER TABLE TCURSO ADD PRE_REQ INTEGER;
+/*adiciona mais uma coluna na tabela de CURSO*/
 
+UPDATE TCURSO SET 
+PRE_REQ=1
+WHERE COD_CURSO=2;
 
-<!-- ----  ---- -->
+UPDATE TCURSO SET 
+PRE_REQ=3
+WHERE COD_CURSO=4;
 
+<!-- ---- CURSOS SEM PRÉ REQUISITOS ---- -->
 
+SELECT * FROM TCURSO WHERE PRE_REQ IS NULL;
 
+<!-- ---- CURSOS COM PRÉ REQUISITOS ---- -->
 
+SELECT * FROM TCURSO WHERE PRE_REQ IS NOT NULL
 
-<!-- ----  ---- -->
+<!-- ---- PRESCEDÊNCIA DE OPERADORES ---- -->
+/*a ordem são () parênteses, depois AND seguido de OR*/
+/*abaixo 2 exemplos com e sem parênteses*/
 
+SELECT * FROM TCURSO
+WHERE VALOR > 750
+OR VALOR < 1000
+ANDE CARGA_HORARIA = 25;
 
+SELECT * FROM TCURSO
+WHERE (VALOR > 750
+OR VALOR < 1000)
+ANDE CARGA_HORARIA = 25;
 
-
-
-<!-- ----  ---- -->
-
-
+<!--  -->
 
 
 

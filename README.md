@@ -23,9 +23,9 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP10:** Implementando constraints
 
-[    ] **CAP11:** Criando visões
+[ OK ] **CAP11:** Criando visões
 
-[    ] **CAP12:** Outros objetos de banco de dados
+[ OK ] **CAP12:** Outros objetos de banco de dados
 
 [    ] **CAP13:** Introdução ao PL/SQL
 

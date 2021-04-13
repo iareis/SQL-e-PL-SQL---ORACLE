@@ -19,9 +19,9 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP08:** Manipulando dados
 
-[    ] **CAP09:** Criando e gerenciando tabelas
+[ OK ] **CAP09:** Criando e gerenciando tabelas
 
-[    ] **CAP10:** Implementando constraints
+[ OK ] **CAP10:** Implementando constraints
 
 [    ] **CAP11:** Criando visões
 

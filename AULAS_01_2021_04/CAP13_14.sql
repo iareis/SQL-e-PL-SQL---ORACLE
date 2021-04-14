@@ -125,7 +125,7 @@ BEGIN
     Dmbs_Output.Put_Line('Bloco Externo: '||VTESTE);
 END:
 
---
+-- 
 
 DECLARE 
     -- VTESTE VARCHAR(10)  := 'JOSE';

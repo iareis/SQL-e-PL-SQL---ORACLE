@@ -27,9 +27,9 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP12:** Outros objetos de banco de dados
 
-[    ] **CAP13:** Introdução ao PL/SQL
+[ OK ] **CAP13:** Introdução ao PL/SQL
 
-[    ] **CAP14:** Escrevendo comandos executáveis
+[ OK ] **CAP14:** Escrevendo comandos executáveis
 
 [    ] **CAP15:** Interagindo com servidor Oracle
 

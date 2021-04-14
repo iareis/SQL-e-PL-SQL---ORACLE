@@ -31,7 +31,7 @@ vFlag BOOLEAN   :=  (vPreco1 < vPreco2);
 || concatenação
 := operador de atribuição
 
-Dmbs_Output.Put_Line() -- imprime o valor que está sendo passado
+Dbms_Output.Put_Line() -- imprime o valor que está sendo passado
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
@@ -46,7 +46,7 @@ BEGIN
     X   :=  10;
     Y   :=  20;
     Z   :=  X   +   Y;
-    Dmbs_Output.Put_Line('Resultado: '||Z); 
+    Dbms_Output.Put_Line('Resultado: '||Z); 
 END;
 
 -- 
@@ -61,9 +61,9 @@ BEGIN
     Dbms_Output.Put_Line('Total: '||VTOTAL);
     VDESCONTO   :=  1.20;
     VCIDADE     := InitCap(VCIDADE);
-    Dmbs_Output.Put_Line('Cidade:   '||VCIDADE);
-    Dmbs_Output.Put_Line('Desconto:   '||VDESCONTO);
-    Dmbs_Output.Put_Line('Aluno:   '||VALUNO);
+    Dbms_Output.Put_Line('Cidade:   '||VCIDADE);
+    Dbms_Output.Put_Line('Desconto:   '||VDESCONTO);
+    Dbms_Output.Put_Line('Aluno:   '||VCOD_ALUNO);
 END;
 
 
@@ -80,26 +80,27 @@ DECLARE
 BEGIN 
     VFLAG := (VPRECO1 > VPRECO2);
         IF (VFLAG = TRUE)
-            THEN    Dmbs_Output.Put_Line('VERDADEIRO');
-            ELSE    Dmbs_Output.Put_Line('FALSO');
+            THEN    Dbms_Output.Put_Line('VERDADEIRO');
+            ELSE    Dbms_Output.Put_Line('FALSO');
         END IF;
         IF (VPRECO1 > VPRECO2)
-            THEN    Dmbs_Output.Put_Line('VPRECO1 é maior!!');
-            ELSE    Dmbs_Output.Put_Line('VPRECO2 é maior!!');
+            THEN    Dbms_Output.Put_Line('VPRECO1 é maior!!');
+            ELSE    Dbms_Output.Put_Line('VPRECO2 é maior!!');
         END IF;    
-END:
+END;
 
 
 
 
 -- BIND VARIABLE --
-VARIABLE VDESCONTO2 NUMBER -- FORA E SEM (;) PONTO E VÍRCULA NO FINAL
+-- FORA E SEM (;) PONTO E VÍRCULA NO FINAL
+VARIABLE VDESCONTO2 NUMBER 
 
 DECLARE
     VCOD_ALUNO NUMBER   := 1;
 BEGIN
     :VDESCONTO2 := 0.90;
-    Dmbs_Output.Put_Line('Desconto 2: '||:VDESCONTO2);
+    Dbms_Output.Put_Line('Desconto 2: '||:VDESCONTO2);
 
     UPDATE TCONTRATO SET
     TOTAL = TOTAL * :VDESCONTO2
@@ -119,11 +120,11 @@ BEGIN
     DECLARE 
         VTESTE VARCHAR(10)  :='PEDRO';
     BEGIN 
-        Dmbs_Output.Put_Line('Bloco Interno: '||VTESTE);
-    END:
+        Dbms_Output.Put_Line('Bloco Interno: '||VTESTE);
+    END;
 
-    Dmbs_Output.Put_Line('Bloco Externo: '||VTESTE);
-END:
+    Dbms_Output.Put_Line('Bloco Externo: '||VTESTE);
+END;
 
 -- 
 
@@ -133,11 +134,11 @@ BEGIN
     DECLARE 
         VTESTE VARCHAR(10)  :='PEDRO';
     BEGIN 
-        Dmbs_Output.Put_Line('Bloco Interno: '||VTESTE);
-    END:
+        Dbms_Output.Put_Line('Bloco Interno: '||VTESTE);
+    END;
 
-    Dmbs_Output.Put_Line('Bloco Externo: '||VTESTE);
-END:
+    Dbms_Output.Put_Line('Bloco Externo: '||VTESTE);
+END;
 /*o bloco PRINCIPAL não visualiza o bloco SECUNDÁRIO
 e desta forma imprime PEDRO e dá ERRO solicitando DECLARAR*/
 
@@ -149,11 +150,11 @@ BEGIN
     DECLARE 
        --  VTESTE VARCHAR(10)  :='PEDRO';
     BEGIN 
-        Dmbs_Output.Put_Line('Bloco Interno: '||VTESTE);
-    END:
+        Dbms_Output.Put_Line('Bloco Interno: '||VTESTE);
+    END;
 
-    Dmbs_Output.Put_Line('Bloco Externo: '||VTESTE);
-END:
+    Dbms_Output.Put_Line('Bloco Externo: '||VTESTE);
+END;
 /*o bloco SECUNDÁRIO visualiza o bloco PRINCIPAL
 e desta forma imprime 2x JOSE*/
 

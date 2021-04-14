@@ -31,7 +31,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP14:** Escrevendo comandos executáveis
 
-[    ] **CAP15:** Interagindo com servidor Oracle
+[ OK ] **CAP15:** Interagindo com servidor Oracle
 
 [    ] **CAP16:** Escrevendo estruturas de controle
 

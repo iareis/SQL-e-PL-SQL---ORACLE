@@ -33,7 +33,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP15:** Interagindo com servidor Oracle
 
-[    ] **CAP16:** Escrevendo estruturas de controle
+[ OK ] **CAP16:** Escrevendo estruturas de controle
 
 [    ] **CAP17:** Tipo de dado Record e Collections
 

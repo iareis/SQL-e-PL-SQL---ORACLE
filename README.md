@@ -38,7 +38,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP17:** Tipo de dado Record e Collections
 
-[ ] **CAP18:** Escrevendo cursores explícitos
+[ OK ] **CAP18:** Escrevendo cursores explícitos
 
 [ ] **CAP19:** Tratamento de exceções
 

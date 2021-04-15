@@ -1,4 +1,4 @@
-# Saindo do ZERO em SQL e PL/SQL com banco de dados Oracle e prepare-se para certificações OCA e OCE
+# Saindo do ZERO em SQL e PL/SQL com banco de dados Oracle e RUMO às certificações OCA e OCE
 
 Iniciando a formação para Banco de Dados ORACLE.
 

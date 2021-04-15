@@ -1,4 +1,5 @@
-# SQL_PL-SQL_---ORACLE
+# SQL*PL-SQL*---ORACLE
+
 Iniciando a formação para Banco de Dados ORACLE.
 
 ## Oracle SQL
@@ -35,50 +36,50 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP16:** Escrevendo estruturas de controle
 
-[    ] **CAP17:** Tipo de dado Record e Collections
+[ OK ] **CAP17:** Tipo de dado Record e Collections
 
-[    ] **CAP18:** Escrevendo cursores explícitos
+[ ] **CAP18:** Escrevendo cursores explícitos
 
-[    ] **CAP19:** Tratamento de exceções
+[ ] **CAP19:** Tratamento de exceções
 
-[    ] **CAP20:** Procedimentos de banco de dados
+[ ] **CAP20:** Procedimentos de banco de dados
 
-[    ] **CAP21:** Funções de banco de dados
+[ ] **CAP21:** Funções de banco de dados
 
-[    ] **CAP22:** Desenvolvendo Packages
+[ ] **CAP22:** Desenvolvendo Packages
 
-[    ] **CAP23:** Desenvolvendo Triggers
+[ ] **CAP23:** Desenvolvendo Triggers
 
-[    ] **CAP24:** Operadores SET
+[ ] **CAP24:** Operadores SET
 
-[    ] **CAP25:** Aperfeiçoando a cláusula Group By
+[ ] **CAP25:** Aperfeiçoando a cláusula Group By
 
-[    ] **CAP26:** Database Link
+[ ] **CAP26:** Database Link
 
-[    ] **CAP27:** Comandos DML Avançado
+[ ] **CAP27:** Comandos DML Avançado
 
-[    ] **CAP28:** SQL Dinâmico em PL/SQL
+[ ] **CAP28:** SQL Dinâmico em PL/SQL
 
-[    ] **CAP29:** PL/SQL Avançado - Introdução
+[ ] **CAP29:** PL/SQL Avançado - Introdução
 
-[    ] **CAP30:** Collections
+[ ] **CAP30:** Collections
 
-[    ] **CAP31:** Comando Merge
+[ ] **CAP31:** Comando Merge
 
-[    ] **CAP32:** Full Text Search
+[ ] **CAP32:** Full Text Search
 
-[    ] **CAP33:** Triggers de DDL
+[ ] **CAP33:** Triggers de DDL
 
-[    ] **CAP34:** Pacote Utl_File
+[ ] **CAP34:** Pacote Utl_File
 
-[    ] **CAP35:** Manipulando XML
+[ ] **CAP35:** Manipulando XML
 
-[    ] **CAP36:** Otimização de Consultas
+[ ] **CAP36:** Otimização de Consultas
 
-[    ] **CAP37:** Criação de Índices
+[ ] **CAP37:** Criação de Índices
 
-[    ] **CAP38:** Estatística
+[ ] **CAP38:** Estatística
 
-[    ] **CAP39:** Views Materializadas
+[ ] **CAP39:** Views Materializadas
 
-[    ] **CAP40:** Hints de Pesquisa
+[ ] **CAP40:** Hints de Pesquisa

@@ -42,7 +42,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP19:** Tratamento de exceções
 
-[ ] **CAP20:** Procedimentos de banco de dados
+[ OK ] **CAP20:** Procedimentos de banco de dados
 
 [ ] **CAP21:** Funções de banco de dados
 

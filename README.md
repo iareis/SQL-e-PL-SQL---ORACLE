@@ -40,7 +40,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP18:** Escrevendo cursores explícitos
 
-[ ] **CAP19:** Tratamento de exceções
+[ OK ] **CAP19:** Tratamento de exceções
 
 [ ] **CAP20:** Procedimentos de banco de dados
 

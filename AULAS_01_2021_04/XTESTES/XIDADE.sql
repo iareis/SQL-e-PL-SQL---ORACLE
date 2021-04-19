@@ -22,33 +22,68 @@ PL/SQL: Statement ignored
 *Cause:    Usually a PL/SQL compilation error.
 */
 
+==============================================================
+
+SELECT NASCIMENTO FROM TALUNO;
+
+
 DECLARE 
-    VIDADE TALUNO.NASCIMENTO%TYPE;
-    VDT_NASCEU TALUNO.NASCIMENTO%TYPE;
-    VDT_HOJE DATE := TRUNC(SYSDATE);
-    VCOD_ALUNO TALUNO.COD_ALUNO%TYPE    :=  &CODIGO;
+    -- =========================================
+    TYPE rec_ALUNO IS RECORD(
+        COD_ALUNO   NUMBER NOT NULL := &CODIGO,
+        NOME        TALUNO.NOME%TYPE,
+        CIDADE      TALUNO.CIDADE%TYPE,
+        NASCIMENTO  TALUNO.NASCIMENTO%TYPE);
+    -- =========================================
+    VDT_HOJE DATE := SYSDATE;
+    REG rec_ALUNO;
 BEGIN
-    SELECT  NASCIMENTO 
-    INTO    VDT_NASCEU
-    FROM    TALUNO
-    WHERE   COD_ALUNO = VCOD_ALUNO;
-    --VIDADE := TO_DATE(VDT_HOJE - VDT_NASCEU);
-    VIDADE := VDT_HOJE - VDT_NASCEU;
-    Dbms_Output.Put_Line(VIDADE);
+    DBMS_OUTPUT.PUT_LINE('Codigo: '||REG.COD_ALUNO);
+    DBMS_OUTPUT.PUT_LINE('  Nome: '||REG.NOME);
+    DBMS_OUTPUT.PUT_LINE('Cidade: '||REG.CIDADE);
+    -- =========================================
+    DBMS_OUTPUT.PUT_LINE('Data Mascimento: '||REG.NASCIMENTO);
 END;
+/*
+Codigo: 5
+  Nome: 
+Cidade: 
+Data Mascimento: 
 
+
+Procedimento PL/SQL concluído com sucesso.
+*/
+
+==============================================================
 
 DECLARE 
-    VIDADE TALUNO.NASCIMENTO%TYPE;
-    VDT_NASCEU TALUNO.NASCIMENTO%TYPE;
-    VDT_HOJE DATE := TRUNC(SYSDATE);
-    VCOD_ALUNO TALUNO.COD_ALUNO%TYPE    :=  &CODIGO;
+    -- =========================================
+    REG TALUNO%ROWTYPE; --RECORD
+    -- =========================================
 BEGIN
-    SELECT  NASCIMENTO 
-    INTO    VDT_NASCEU
-    FROM    TALUNO
-    WHERE   COD_ALUNO = VCOD_ALUNO;
-    --VIDADE := TO_DATE(VDT_HOJE - VDT_NASCEU);
-    VIDADE := VDT_HOJE
+    SELECT COD_ALUNO, NOME, CIDADE, NASCIMENTO
+    INTO REG.COD_ALUNO, REG.NOME, REG.CIDADE, REG.NASCIMENTO
+    FROM TALUNO
+    WHERE COD_ALUNO = &CODIGO;
+    -- =========================================
+    DBMS_OUTPUT.PUT_LINE('Codigo:          '||REG.COD_ALUNO);
+    DBMS_OUTPUT.PUT_LINE('Nome:            '||REG.NOME);
+    DBMS_OUTPUT.PUT_LINE('Cidade:          '||REG.CIDADE);
+    -- =========================================
+    DBMS_OUTPUT.PUT_LINE('Data Mascimento: '||REG.NASCIMENTO);
+END;
+/*
+Codigo:          5
+Nome:            Beta
+Cidade:          PORTO ALEGRE
+Data Mascimento: 13/07/18
 
 
+Procedimento PL/SQL concluído com sucesso.
+*/
+
+SELECT ROUND(MONTHS_BETWEEN(TO_DATE(SYSDATE, 'DD/MM/YY') - TO_DATE(REG.NASCIMENTO, 'DD/MM/YY')))) AS MONTHS_BETWEEN;
+-- =========================================
+
+    
+    

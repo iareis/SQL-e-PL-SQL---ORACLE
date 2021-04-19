@@ -2,6 +2,8 @@
 ===   TO_DATE   ===
 ===================
 
+[https://www.youtube.com/watch?v=NEsEipDsFsI](Aprenda PL/SQL)
+
 /*
 A Funcao TO_DATE eh uma funcao que transforma o parametro do tipo CHAR
 em um parâmetro do tipo DATE.

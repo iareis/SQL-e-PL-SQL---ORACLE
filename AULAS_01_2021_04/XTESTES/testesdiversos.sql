@@ -64,3 +64,79 @@ BEGIN
 END;
 
 
+
+
+CREATE OR REPLACE PROCEDURE AUMENTA_PRECOCURSO(pCOD_CURSO NUMBER)
+IS 
+--VARIAVEIS AQUI COLOCADAS, MAS NESTE EXEMPLO NÃO TEM
+BEGIN 
+    --AUMENTAR O VALOR DE UM CURSO EM 10%
+    UPDATE TCURSO SET 
+    VALOR = VALOR * 1.1
+    WHERE COD_CURSO = pCOD_CURSO;
+END;
+
+EXEC AUMENTA_PRECOCURSO(&COD);
+
+SELECT * FROM TCURSO;
+
+
+
+-- =====================================================================================
+
+CREATE OR REPLACE PROCEDURE PHONE_NUMBER
+(P_FONE IN OUT VARCHAR2)
+IS 
+BEGIN 
+    P_FONE := '( '||SUBSTR(P_FONE, 0, 2)||') '||SUBSTR(P_FONE, 2, 5)||'-'||SUBSTR(P_FONE, 7, 4);
+END;
+/*
+Procedure PHONE_NUMBER compilado
+*/
+
+
+
+DECLARE
+    V_FONE VARCHAR2(20);
+BEGIN 
+    V_FONE := &NUMERO_CELULAR;
+    PHONE_NUMBER(V_FONE);
+    DBMS_OUTPUT.PUT_LINE(V_FONE);
+END;
+
+-- =====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

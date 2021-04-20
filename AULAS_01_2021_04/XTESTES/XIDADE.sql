@@ -86,4 +86,31 @@ SELECT ROUND(MONTHS_BETWEEN(TO_DATE(SYSDATE, 'DD/MM/YY') - TO_DATE(REG.NASCIMENT
 -- =========================================
 
     
-    
+ ==============================================================
+
+DECLARE 
+    -- =========================================
+    REG TALUNO%ROWTYPE; --RECORD
+    -- =========================================
+BEGIN
+    SELECT COD_ALUNO, NOME, CIDADE, NASCIMENTO
+    INTO REG.COD_ALUNO, REG.NOME, REG.CIDADE, REG.NASCIMENTO
+    FROM TALUNO
+    WHERE COD_ALUNO = &CODIGO;
+    -- =========================================
+    DBMS_OUTPUT.PUT_LINE('Codigo:          '||REG.COD_ALUNO);
+    DBMS_OUTPUT.PUT_LINE('Nome:            '||REG.NOME);
+    DBMS_OUTPUT.PUT_LINE('Cidade:          '||REG.CIDADE);
+    -- =========================================
+    DBMS_OUTPUT.PUT_LINE('Data Mascimento: '||TO_CHAR(REG.NASCIMENTO, 'DD/MM/YYYY'));
+    -- =========================================
+    DBMS_OUTPUT.PUT_LINE(ROUND((TO_DATE(sysdate) - TO_DATE(REG.NASCIMENTO))/12));
+    DBMS_OUTPUT.PUT_LINE(ROUND(TO_DATE(sysdate) - TO_DATE(REG.NASCIMENTO)));
+END;
+
+SELECT COD_ALUNO, NOME, TO_CHAR(NASCIMENTO, 'DD/MM/YYYY')
+FROM TALUNO WHERE COD_ALUNO=5;
+
+
+
+

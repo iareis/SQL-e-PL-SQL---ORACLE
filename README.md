@@ -46,7 +46,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP21:** Funções de banco de dados
 
-[ ] **CAP22:** Desenvolvendo Packages
+[ OK ] **CAP22:** Desenvolvendo Packages
 
 [ ] **CAP23:** Desenvolvendo Triggers
 

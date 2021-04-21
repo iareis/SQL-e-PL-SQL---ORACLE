@@ -56,7 +56,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP26:** Database Link
 
-[ ] **CAP27:** Comandos DML Avançado
+[ OK ] **CAP27:** Comandos DML Avançado
 
 [ ] **CAP28:** SQL Dinâmico em PL/SQL
 

@@ -60,7 +60,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP28:** SQL Dinâmico em PL/SQL
 
-[ ] **CAP29:** PL/SQL Avançado - Introdução
+[ OK ] **CAP29:** PL/SQL Avançado - Introdução
 
 [ ] **CAP30:** Collections
 

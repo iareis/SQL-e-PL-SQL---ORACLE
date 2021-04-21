@@ -52,7 +52,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP24:** Operadores SET
 
-[ ] **CAP25:** Aperfeiçoando a cláusula Group By
+[ OK ] **CAP25:** Aperfeiçoando a cláusula Group By
 
 [ ] **CAP26:** Database Link
 

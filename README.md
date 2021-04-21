@@ -48,7 +48,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP22:** Desenvolvendo Packages
 
-[ ] **CAP23:** Desenvolvendo Triggers
+[ OK ] **CAP23:** Desenvolvendo Triggers
 
 [ ] **CAP24:** Operadores SET
 

@@ -50,7 +50,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP23:** Desenvolvendo Triggers
 
-[ ] **CAP24:** Operadores SET
+[ OK ] **CAP24:** Operadores SET
 
 [ ] **CAP25:** Aperfeiçoando a cláusula Group By
 

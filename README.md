@@ -54,7 +54,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP25:** Aperfeiçoando a cláusula Group By
 
-[ ] **CAP26:** Database Link
+[ OK ] **CAP26:** Database Link
 
 [ ] **CAP27:** Comandos DML Avançado
 

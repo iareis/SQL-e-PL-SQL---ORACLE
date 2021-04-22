@@ -66,7 +66,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP31:** Comando Merge
 
-[ ] **CAP32:** Full Text Search
+[ XX ] **CAP32:** Full Text Search
 
 [ ] **CAP33:** Triggers de DDL
 

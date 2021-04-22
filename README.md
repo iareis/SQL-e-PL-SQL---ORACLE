@@ -70,7 +70,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP33:** Triggers de DDL
 
-[ ] **CAP34:** Pacote Utl_File
+[ XX ] **CAP34:** Pacote Utl_File
 
 [ ] **CAP35:** Manipulando XML
 

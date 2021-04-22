@@ -68,7 +68,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ XX ] **CAP32:** Full Text Search
 
-[ ] **CAP33:** Triggers de DDL
+[ OK ] **CAP33:** Triggers de DDL
 
 [ ] **CAP34:** Pacote Utl_File
 

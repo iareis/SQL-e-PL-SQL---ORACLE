@@ -78,7 +78,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP37:** Criação de Índices
 
-[ ] **CAP38:** Estatística
+[ OK ] **CAP38:** Estatística
 
 [ ] **CAP39:** Views Materializadas
 

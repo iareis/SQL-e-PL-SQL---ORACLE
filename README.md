@@ -72,7 +72,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ XX ] **CAP34:** Pacote Utl_File
 
-[ ] **CAP35:** Manipulando XML
+[ XX ] **CAP35:** Manipulando XML
 
 [ ] **CAP36:** Otimização de Consultas
 

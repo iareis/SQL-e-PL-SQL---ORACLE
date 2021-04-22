@@ -62,7 +62,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP29:** PL/SQL Avançado - Introdução
 
-[ ] **CAP30:** Collections
+[ OK ] **CAP30:** Collections
 
 [ ] **CAP31:** Comando Merge
 

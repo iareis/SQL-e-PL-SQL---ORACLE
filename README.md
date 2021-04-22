@@ -76,7 +76,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP36:** Otimização de Consultas
 
-[ ] **CAP37:** Criação de Índices
+[ OK ] **CAP37:** Criação de Índices
 
 [ ] **CAP38:** Estatística
 

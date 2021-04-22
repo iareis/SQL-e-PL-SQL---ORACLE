@@ -74,7 +74,7 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ XX ] **CAP35:** Manipulando XML
 
-[ ] **CAP36:** Otimização de Consultas
+[ OK ] **CAP36:** Otimização de Consultas
 
 [ ] **CAP37:** Criação de Índices
 

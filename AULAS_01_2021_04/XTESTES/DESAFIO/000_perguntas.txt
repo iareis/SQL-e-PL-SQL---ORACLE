@@ -1,0 +1,93 @@
+1. Criar um programa que possua uma variável constante com um valor e calcule a tabuada (Até 10). Tem que retornar da seguinte maneira:
+
+1 x 5 = 5
+
+2 x 5 = 10
+
+3 x 5 = 15
+
+.
+
+.
+
+.
+
+2- Criar uma função que deverá receber um número inteiro e retornar se o mesmo
+
+é primo ou não. (Lembrete: Números primos são divisíveis somente por eles mesmos e por um).
+
+3 - Criar uma função que deverá receber um valor correspondente à temperatura
+
+em graus Fahrenheit e retornar o equivalente em graus Celsius. Fórmula para
+
+conversão: C = (F ‐ 32) / 1.8
+
+4 - Criar um bloco PL/SQL para imprimir a tabuada de 0 a 20, sendo que cada um desses números deverá ter o cálculo até 10.
+
+5 - Criar um bloco PL/SQL para apresentar os anos bissextos entre 2000 e 2100. Um ano será bissexto quando for possível dividi‐lo por 4, mas não por 100 ou quando for possível dividi‐lo por 400.
+
+6 - Criar um bloco PL/SQL para atualizar a tabela abaixo, conforme segue:
+
+Produtos categoria A deverão ser reajustados em 5%
+
+Produtos categoria B deverão ser reajustados em 10%
+
+Produtos categoria C deverão ser reajustados em 15%
+
+/*criar Tabela*/
+
+CREATE TABLE PRODUTO (
+
+CODIGO NUMBER(4),
+
+CATEGORIA CHAR(1),
+
+VALOR NUMBER(4,2));
+
+/*inserir dados na tabela*/
+
+INSERT INTO PRODUTO VALUES (1001,'A',7.55);
+
+INSERT INTO PRODUTO VALUES (1002,'B',5.95);
+
+INSERT INTO PRODUTO VALUES (1003,'C',3.45);
+
+7 - Criar um bloco PL/SQL para imprimir a sequência de Fibonacci: 1 1 2 3 5 8 13 21 34 55
+
+8 - Criar uma procedure que deverá receber o código de um cliente e a partir deste dado imprimir o seu
+
+nome, e seu e‐mail. Os dados deverão ser obtidos a partir de uma tabela chamada CLIENTE com as
+
+seguintes colunas (COD_CLI,NOME_CLI,EMAIL_CLI)
+
+*/
+
+/* Criar a tabela cliente */
+
+CREATE TABLE CLIENTE (
+
+COD_CLI NUMBER(4) PRIMARY KEY,
+
+NOME_CLI VARCHAR2(30),
+
+EMAIL_CLI VARCHAR2(30));
+
+/* inserir o dado*/
+
+INSERT INTO CLIENTE VALUES (10,'BEATRIZ BERNARDES','bb@dominio.com.br');
+
+9 - Criar uma procedure que receberá um RA, um NOME e quatro notas conforme a
+
+sequência: (RA,NOME,A1,A2,A3,A4).
+
+A partir destes valores deverá efetuar o cálculo da média somando o maior valor
+
+entre A1 e A2 às notas A3 e A4 e dividindo o valor obtido por três (achando a média).
+
+Se a média for menor que 6 (seis) o aluno estará REPROVADO e se a média for
+
+igual ou superior a 6 (seis) o aluno estará APROVADO.
+
+A procedure deverá inserir os valores acima numa tabela denominada ALUNO com as
+
+seguintes colunas RA,NOME,A1,A2,A3,A4,MEDIA,RESULTADO

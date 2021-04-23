@@ -80,6 +80,6 @@ Iniciando a formação para Banco de Dados ORACLE.
 
 [ OK ] **CAP38:** Estatística
 
-[ ] **CAP39:** Views Materializadas
+[ XX ] **CAP39:** Views Materializadas
 
 [ ] **CAP40:** Hints de Pesquisa

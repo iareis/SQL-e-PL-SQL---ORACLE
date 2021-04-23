@@ -123,6 +123,7 @@ BEGIN
     END IF;
 END;
 
+================================================================================================
 
 CREATE OR REPLACE FUNCTION PRIMO (  V_N NUMBER)   RETURN VARCHAR2 
 IS  V_SQRT NUMBER(4);  
@@ -139,6 +140,26 @@ BEGIN
     END LOOP;  
     RETURN V_RESULTADO; 
 END
+
+
+================================================================================================
+FUNCTION OK
+IMPRESSÃO FALHA
+
+CREATE OR REPLACE FUNCTION CONVERTE_TEMP_FEMC (TEMP_F NUMBER) RETURN NUMBER
+IS TEMP_C NUMBER(5,1);
+BEGIN 
+TEMP_C := (TEMP_F - 32) / 1.8;
+RETURN TEMP_C;
+END;
+
+
+DECLARE
+    V_RESP NUMBER;
+    GRAU_F NUMBER;
+BEGIN 
+    V_RESP := CONVERTE_TEMP_FEMC(&TEMPERATURA_FAHRENHEIT);
+    DBMS_OUTPUT.PUT_LINE('A TEMPERATURA'||TEMP_F||' GRAUS FAHRENHEIT CORRESPONDE A '||V_RESP||' GRAUS CELSIUS.');
 
 
 

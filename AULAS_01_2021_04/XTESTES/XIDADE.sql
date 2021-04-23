@@ -1,3 +1,9 @@
+https://docs.oracle.com/cloud/help/pt_BR/reportingcs_use/BILPD/GUID-4CBCE8D4-CF17-43BD-AAEF-C5D614A8040A.htm#BILPD-GUID-A1A6563A-4B60-471A-87DA-C999CFDFA630
+
+========================================================================================================
+
+
+
 DECLARE 
     VIDADE TALUNO.NASCIMENTO%TYPE;
     VDT_NASCEU TALUNO.NASCIMENTO%TYPE;

@@ -124,8 +124,21 @@ BEGIN
 END;
 
 
-
-
+CREATE OR REPLACE FUNCTION PRIMO (  V_N NUMBER)   RETURN VARCHAR2 
+IS  V_SQRT NUMBER(4);  
+    V_DIVISOR NUMBER(4);  
+    V_RESULTADO VARCHAR2(12) := 'É PRIMO';
+BEGIN  
+    V_SQRT := SQRT(V_N);  
+    FOR V_I IN 2..V_SQRT 
+    LOOP   
+        IF MOD(V_N,V_I) = 0 AND V_N <> V_I THEN    
+            V_RESULTADO := 'NÃO É PRIMO';    
+            V_DIVISOR := V_I;   
+        END IF;  
+    END LOOP;  
+    RETURN V_RESULTADO; 
+END
 
 
 

@@ -88,12 +88,16 @@ leitura seqüencial de um arquivo de texto
 
 Exemplo para geração de arquivo texto:
 
-CREATE OR REPLACE DIRECTORY DIRETORIO AS 'F:\Temp';
+CREATE OR REPLACE DIRECTORY DIRETORIO2 AS 'd:\lisiane\';
 /*
 Directory DIRETORIO criado.
 */
 
+GRANT READ, WRITE ON DIRECTORY DIRETORIO TO iareis;
 
+show user;
+
+CREATE DIRECTORY DIRETORIO2 AS 'd:\lisiane\';
 
 DECLARE
  arquivo_saida UTL_File.File_Type;
@@ -126,7 +130,7 @@ EXCEPTION
  UTL_File.Fclose(arquivo_saida);
 END;
 
-
+INSERT
 
 =================================================================================
 
@@ -136,7 +140,7 @@ DECLARE
  arquivo UTL_File.File_Type;
  Linha Varchar2(100);
 BEGIN
- arquivo := UTL_File.Fopen('DIRETORIO','Teste.txt', 'r');
+ arquivo := UTL_File.Fopen('DIRETORIO','Lista.txt', 'r');
  Loop
  UTL_File.Get_Line(arquivo, Linha);
  Dbms_Output.Put_Line('Registro: '||linha);
@@ -170,7 +174,7 @@ DECLARE
 BEGIN
  VARQUIVO := UTL_FILE.FOPEN('DIRETORIO', 'Lista.TXT', 'w');
  FOR x in 1..8 LOOP
- VLINHA := 'LINHA ' || x;
+ VLINHA := vlinha || x;
  UTL_FILE.PUT_LINE(VARQUIVO, VLINHA);
  Dbms_Output.Put_Line('Registro: '||Vlinha);
  END LOOP;

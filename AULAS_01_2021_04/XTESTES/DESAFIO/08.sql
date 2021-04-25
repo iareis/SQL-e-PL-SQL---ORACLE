@@ -39,12 +39,34 @@ END;
 Procedure RECEBE_CLIENTE compilado
 */
 
-DECLARE
-BEGIN 
-    RECEBE_CLIENTE(&COD_CLIENTE);
-    DBMS_OUTPUT.PUT_LINE('NOME  : '||V_CLIENTE.NOME_CLI);
-    DBMS_OUTPUT.PUT_LINE('E-MAIL: '||V_CLIENTE.EMAIL_CLI);
-END;
+
+EXEC RECEBE_CLIENTE(10);
+/*
+NOME  : BEATRIZ BERNARDES
+E-MAIL: bb@dominio.com.br
+
+
+Procedimento PL/SQL concluído com sucesso.
+
+Decorrido: 00:00:00.027
+*/
+
+
+
+
+
+
+/*SET SERVEROUTPUT ON;
+
+DECLARE 
+  v_ID SEGMERCADO.ID%type:=2;
+  v_DESCRICAO SEGMERCADO.DESCRICAO%type;
+
+BEGIN
+    SELECT DESCRICAO INTO v_DESCRICAO FROM SEGMERCADO WHERE ID = v_ID;
+    dbms_output.put_line(v_DESCRICAO);
+END*/
+
 
 
 

@@ -83,3 +83,38 @@ begin
 		dbms_output.put_line(third);
 	end loop;
 end;
+
+
+==================================================
+Lisiane Reis Ferreira16:58
+SET SERVEROUTPUT ON;
+
+DECLARE 
+  v_ID SEGMERCADO.ID%type:=2;
+  v_DESCRICAO SEGMERCADO.DESCRICAO%type;
+
+BEGIN
+    SELECT DESCRICAO INTO v_DESCRICAO FROM SEGMERCADO WHERE ID = v_ID;
+    dbms_output.put_line(v_DESCRICAO);
+END;
+Lisiane Reis Ferreira17:04
+https://cursos.alura.com.br/forum/topico-impressao-de-resultado-119502
+Lisiane Reis Ferreira17:36
+Basicamente a diferença no uso das duas é essa. A view realiza a consulta no momento que o usuário faz uma consulta nela e a materialized view realiza a consulta no momento em que uma das tabelas consultadas é atualizada.
+Lisiane Reis Ferreira17:41
+https://pt.stackoverflow.com/questions/138033/qual-a-diferen%C3%A7a-entre-view-e-materialized-view
+Lisiane Reis Ferreira17:53
+oracle_home
+Lisiane Reis Ferreira17:58
+GRANT READ, WRITE ON DIRECTORY DIRETORIO TO USUARIO;
+Lisiane Reis Ferreira18:05
+https://pt.stackoverflow.com/questions/166911/backup-de-tabelas-oracle-11g
+Lisiane Reis Ferreira18:19
+https://www.devmedia.com.br/pacote-utl_file-do-oracle/13129
+Lisiane Reis Ferreira18:34
+grant execute on UTL_FILE to public;
+Lisiane Reis Ferreira18:45
+ERWin na tua maquina
+engenharia reversa
+Lisiane Reis Ferreira19:07
+You use the IF-THEN-ELSIF-ELSE syntax, when you want to execute one set of statements when condition1 is TRUE, a different set of statements when condition2 is TRUE, or a different set of statements when all previous conditions (ie: condition1 and condition2) are FALSE.

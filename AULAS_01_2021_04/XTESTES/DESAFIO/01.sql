@@ -1,15 +1,12 @@
- QUESTAO 01:
-
- Criar um programa que possua uma variável constante com um valor e calcule a tabuada (Até 10).
- Tem que retornar da seguinte maneira:
-
-1 x 5 = 5
-
-2 x 5 = 10
-
-3 x 5 = 15
-
-========================================================================================================================
+==========================================================================================================
+===   QUESTAO 01:                                                                                      === 
+===   Criar um programa que possua uma variável constante com um valor e calcule a tabuada (Até 10).   ===
+===   Tem que retornar da seguinte maneira:                                                            ===
+===                                                                                                    ===     
+===   1 x 5 = 5                                                                                        ===
+===   2 x 5 = 10                                                                                       ===
+===   3 x 5 = 15                                                                                       ===
+==========================================================================================================
 SITUACAO 01:
 
 DECLARE 

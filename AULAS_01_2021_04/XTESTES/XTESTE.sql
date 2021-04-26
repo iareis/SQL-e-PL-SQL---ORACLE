@@ -84,8 +84,30 @@ END;
 
 
 
+==========================================================
+==========================================================
+==========================================================
+==========================================================
+==========================================================
 
+SELECT to_date(hire_date, 'YYYYMMDD') AS "TO_DATE"
+  FROM dual;
 
+SELECT to_date('14/09/2016 02:50:21', 'DD/MM/YYYY HH24:MI:SS') AS "TO_DATE"
+  FROM dual;
+
+SELECT to_date('14/09/2016 02', 'DD/MM/YY HH24') AS TO_DATE
+  FROM dual;
+
+SELECT to_date('050817', 'MMDDYY') AS "TO_DATE"
+  FROM dual;
+
+/*
+SELECT NAME, SOBRENOME
+FROM TALUNO
+WHERE hire_date BETWEEN to_date('13/01/2001', 'DD/MM/YY') 
+AND to_date('17/08/2002', 'DD/MM/YY');
+*/
 
 
 

@@ -2,34 +2,6 @@ https://docs.oracle.com/cloud/help/pt_BR/reportingcs_use/BILPD/GUID-4CBCE8D4-CF1
 
 ========================================================================================================
 
-
-
-DECLARE 
-    VIDADE TALUNO.NASCIMENTO%TYPE;
-    VDT_NASCEU TALUNO.NASCIMENTO%TYPE;
-    VDT_HOJE DATE := TRUNC(SYSDATE);
-    VCOD_ALUNO TALUNO.COD_ALUNO%TYPE    :=  &CODIGO;
-BEGIN
-    SELECT  NASCIMENTO 
-    INTO    VDT_NASCEU
-    FROM    TALUNO
-    WHERE   COD_ALUNO = VCOD_ALUNO;
-    --VIDADE := TO_DATE(VDT_HOJE - VDT_NASCEU);
-    VIDADE := VDT_HOJE - VDT_NASCEU;
-    Dbms_Output.Put_Line(VIDADE);
-END;
-/*
-Relatório de erros -
-ORA-06550: linha 12, coluna 15:
-PLS-00382: a expressão é do tipo incorreto
-ORA-06550: linha 12, coluna 5:
-PL/SQL: Statement ignored
-06550. 00000 -  "line %s, column %s:\n%s"
-*Cause:    Usually a PL/SQL compilation error.
-*/
-
-==============================================================
-
 SELECT NASCIMENTO FROM TALUNO;
 
 
@@ -116,6 +88,39 @@ END;
 
 SELECT COD_ALUNO, NOME, TO_CHAR(NASCIMENTO, 'DD/MM/YYYY')
 FROM TALUNO WHERE COD_ALUNO=5;
+
+
+==============================================================
+
+
+
+DECLARE 
+    VIDADE TALUNO.NASCIMENTO%TYPE;
+    VDT_NASCEU TALUNO.NASCIMENTO%TYPE;
+    VDT_HOJE DATE := TRUNC(SYSDATE);
+    VCOD_ALUNO TALUNO.COD_ALUNO%TYPE;
+BEGIN
+    VCOD_ALUNO := &CODIGO;
+    ---
+    SELECT  NASCIMENTO 
+    INTO    VDT_NASCEU
+    FROM    TALUNO
+    WHERE   COD_ALUNO = VCOD_ALUNO;
+    ---
+    --VIDADE := TO_DATE(VDT_HOJE - VDT_NASCEU);
+    --VIDADE := VDT_HOJE - VDT_NASCEU;
+    TRUNC((MONTHS_BETWEEN(SYSDATE, TO_DATE(VIDADE, 'DD/MM/YYYY')))/12)
+    AS V_IDADE;
+    ---
+    DBMS_OUTPUT.PUT_LINE('Codigo: '||REG.COD_ALUNO);
+    DBMS_OUTPUT.PUT_LINE('  Nome: '||REG.NOME);
+    DBMS_OUTPUT.PUT_LINE('Cidade: '||REG.CIDADE);
+    -- =========================================
+    DBMS_OUTPUT.PUT_LINE('Data Mascimento: '||REG.NASCIMENTO);
+    Dbms_Output.Put_Line('o '||REG.NOME||' tem '||VIDADE||' ANOS');
+END;
+
+
 
 
 

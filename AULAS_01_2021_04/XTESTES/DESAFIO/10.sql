@@ -7,6 +7,7 @@ Exemplo de Cálculo do IPI
 O IPI é calculado tendo como base a alíquota descrita na TIPI.
 Para indústrias, o Imposto sobre Produtos Industrializados é calculado 
 em relação ao valor da nota fiscal da mercadoria despachada. 
+
 A NF pode eventualmente incluir valores sobre o frete e despesas como juros, 
 taxas, entre outras.
 

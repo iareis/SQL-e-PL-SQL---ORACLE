@@ -1,0 +1,110 @@
+===========================================================
+===   CALCULE O IMC DE PESSOAS E INCLUA NA TABELA       ===
+===   T_IMC QUE DEVE CONTER COD(PK), NOME, IDADE,       ===
+===   PESO, ALTURA, IMC E O RESULTADO CONFORME TABELA   ===
+===   DE IMC PARA ADULTOS                               ===
+===========================================================
+
+CREATE TABLE T_IMC(
+    COD_INDIVIDUAL  INTEGER NOT NULL,
+    NOME            VARCHAR2(40),
+    IDADE           NUMBER(5,2),                 
+    PESO            NUMBER(5,2),
+    ALTURA          NUMBER(5,2),
+    IMC             NUMBER(3,1),
+    RESULTADO       VARCHAR2(20),
+    CONSTRAINT PK_IMC PRIMARY KEY (COD_INDIVIDUAL)
+);
+
+
+
+
+CREATE OR REPLACE PROCEDURE PRO_CALCULO_IMC (
+    P_COD_INDIVIDUAL  INTEGER,
+    P_NOME            VARCHAR2,
+    P_IDADE           NUMBER,  
+    P_PESO            NUMBER,
+    P_ALTURA          NUMBER)
+AS 
+    V_IMC T_IMC.IMC%TYPE;
+    V_PESO T_IMC.PESO%TYPE;
+    V_ALTURA T_IMC.ALTURA%TYPE;
+    V_RESULTADO T_IMC.RESULTADO%TYPE;
+BEGIN 
+    V_PESO := P_PESO;
+    V_ALTURA := P_ALTURA;
+    --V_IMC := V_PESO / POWER(V_ALTURA,2);
+    V_IMC := P_PESO / (P_ALTURA * P_ALTURA);
+    ---
+    /*VERIFICAÇÃO TABELA IMC*/
+    IF V_IMC <= 18.5 THEN 
+        V_RESULTADO := 'ABAIXO DO PESO';
+    ELSIF V_IMC > 18.5 AND V_IMC <= 24.9 THEN
+            V_RESULTADO := 'PESO NORMAL';
+    ELSIF V_IMC > 24.9 AND V_IMC <=29.9 THEN
+            V_RESULTADO := 'SOBREPESO';
+    ELSIF V_IMC > 24.9 AND V_IMC <= 34.9 THEN
+            V_RESULTADO := 'OBESIDADE GRAU 1';
+    ELSIF V_IMC > 34.9 AND V_IMC <= 39.9 THEN
+            V_RESULTADO := 'OBESIDADE GRAU 2';
+    ELSE
+         V_RESULTADO := 'OBESIDADE GRAU 3';
+    END IF;
+    DBMS_OUTPUT.PUT_LINE('PESO:   '||V_PESO);        
+    DBMS_OUTPUT.PUT_LINE('ALTURA: '||V_ALTURA);        
+    DBMS_OUTPUT.PUT_LINE('--------------------------------------------');        
+    DBMS_OUTPUT.PUT_LINE('Seu IMC '||V_IMC||' significa: '||V_RESULTADO);        
+    ---
+    /*PARA INSERIR AS INFORMAÇÕES NA TABELA T_IMC*/
+    INSERT INTO T_IMC (COD_INDIVIDUAL,NOME,IDADE,PESO,ALTURA,IMC,RESULTADO)
+    VALUES(P_COD_INDIVIDUAL,P_NOME,P_IDADE,P_PESO,P_ALTURA,V_IMC,V_RESULTADO);
+    ---
+    /*TRATAMENTO DE EXCECOES*/
+    BEGIN
+        SELECT RESULTADO
+        INTO V_RESULTADO
+        FROM T_IMC
+        WHERE COD_INDIVIDUAL = P_COD_INDIVIDUAL;
+    EXCEPTION
+          WHEN no_data_found THEN
+            DBMS_OUTPUT.PUT_LINE('Individuo não encontrado: '||P_COD_INDIVIDUAL);
+          WHEN OTHERS THEN
+              DBMS_OUTPUT.PUT_LINE ('Erro ao buscar Pessoa: '||sqlerrm);
+    END;
+END;
+
+
+
+
+BEGIN
+PRO_CALCULO_IMC(1,'IURI',51,124,1.83);      -- imc = 37 - GRAU 2
+END;
+
+BEGIN
+PRO_CALCULO_IMC(2,'ASSIS',25,98,1.90);      -- IMC = 27,1 - SOBREPESO
+END;
+
+BEGIN
+PRO_CALCULO_IMC(3,'MARCIO',14,71,1.67);     -- IMC = 25,5 - SOBREPESO
+END;
+
+BEGIN
+PRO_CALCULO_IMC(4,'ZEUS',7,20,1.23);        -- IMC = 13,2 - ABAIXO DO PESO 
+END;
+
+BEGIN
+PRO_CALCULO_IMC(5,'THOR',7,48.4,1.23);        -- IMC = 32 - GRAU 1
+END;
+
+BEGIN
+PRO_CALCULO_IMC(6,'MEDUSA',7,118,1.69);        -- IMC = 38 - GRAU 3 
+END;
+
+BEGIN
+PRO_CALCULO_IMC(7,'MODELO',26,75,1.82);        -- IMC = 38 - NO PESO
+END;
+
+
+
+
+SELECT * FROM T_IMC;

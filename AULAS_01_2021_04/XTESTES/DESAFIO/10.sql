@@ -37,6 +37,7 @@ CREATE TABLE BASE_CALC_IPI(
     OUTRAS_DESP     NUMBER(8,2),
     ALIQUOTA        NUMBER(3,2) DEFAULT 0.17,
     VALOR_IPI       NUMBER(8,2),
+    TOTAL_DA_NOTA   NUMBER(8,2),
     CONSTRAINT      PK_BASE_IPI PRIMARY KEY(COD_BASE_CALC)
 );
 /*
@@ -66,8 +67,8 @@ BEGIN
     V_VALOR_IPI := V_BASE_CALCULO * (V_ALIQUOTA/100);
     V_VALOR_TOTAL_DA_NOTA := V_BASE_CALCULO + V_VALOR_IPI;
     IF P_COD_BASE_CALC >= 1 THEN
-        INSERT INTO BASE_CALC_IPI (COD_BASE_CALC,VALOR_PRODUTO,FRETE,SEGURO,OUTRAS_DESP,ALIQUOTA,VALOR_IPI)
-        VALUES (P_COD_BASE_CALC,P_VALOR_PRODUTO,P_FRETE,P_SEGURO,P_OUTRAS_DESP,V_ALIQUOTA,V_VALOR_IPI);
+        INSERT INTO BASE_CALC_IPI (COD_BASE_CALC,VALOR_PRODUTO,FRETE,SEGURO,OUTRAS_DESP,ALIQUOTA,VALOR_IPI,TOTAL_DA_NOTA)
+        VALUES (P_COD_BASE_CALC,P_VALOR_PRODUTO,P_FRETE,P_SEGURO,P_OUTRAS_DESP,V_ALIQUOTA,V_VALOR_IPI,V_VALOR_TOTAL_DA_NOTA);
         DBMS_OUTPUT.PUT_LINE('VALOR DO PRODUTO: '||P_VALOR_PRODUTO);
         DBMS_OUTPUT.PUT_LINE('VALOR DO FRETE:   '||P_FRETE);
         DBMS_OUTPUT.PUT_LINE('VALOR DO SEGURO:  '||P_SEGURO);
@@ -76,7 +77,7 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('ALICOTA 2021:     '||P_ALIQUOTA*100||'%');
         DBMS_OUTPUT.PUT_LINE('IPI CALCULADO:    '||V_VALOR_IPI);
         DBMS_OUTPUT.PUT_LINE('-------------------------------------');
-        DBMS_OUTPUT.PUT_LINE('TOTAL DA NOTA:    '||V_VALOR_TOTAL_DA_NOTA);
+        DBMS_OUTPUT.PUT_LINE('TOTAL DA NOTA:    '||TO_CHAR(V_VALOR_TOTAL_DA_NOTA,'L999G999D99'));
     END IF;
 END PRO_CALC_IPI;
 /*
@@ -101,6 +102,7 @@ ALICOTA 2021:     17%
 IPI CALCULADO:    2,84
 -------------------------------------
 TOTAL DA NOTA:    1672,84
+
 Procedimento PL/SQL concluído com sucesso.
 Decorrido: 00:00:00.030
 */
@@ -116,8 +118,89 @@ Decorrido: 00:00:00.036
 */
 
 ===================================================================================
+--TABULANDO VALOR TOTAL DA NOTA COM TO_CHAR(V_VALOR_TOTAL_DA_NOTA,'L999G999D99')
 ===================================================================================
+/*
+Procedure PRO_CALC_IPI compilado
+Decorrido: 00:00:00.081
+*/
+
+BEGIN 
+PRO_CALC_IPI(2,1500,278,350,.17,222);
+END;
+/*
+Decorrido: 00:00:00.081
+VALOR DO PRODUTO: 1500
+VALOR DO FRETE:   278
+VALOR DO SEGURO:  350
+OUTRAS DESPESAS:  222
+-------------------------------------
+ALICOTA 2021:     17%
+IPI CALCULADO:    4
+-------------------------------------
+TOTAL DA NOTA:               R$2.354,00
+
+Procedimento PL/SQL concluído com sucesso.
+Decorrido: 00:00:00.032
+*/
+
+
 ===================================================================================
+--INSERINDO O TOTAL DA NOTA
+===================================================================================
+
+BEGIN 
+PRO_CALC_IPI(1,1000,200,250,.17,220);
+END;
+
+BEGIN 
+PRO_CALC_IPI(2,1500,278,350,.17,222);
+END;
+
+BEGIN 
+PRO_CALC_IPI(3,500,178,350,.17,222);
+END;
+
+BEGIN 
+PRO_CALC_IPI(4,2500,578,300,.17,111);
+END;
+
+BEGIN 
+PRO_CALC_IPI(5,400,78,125,.17,333);
+END;
+
+BEGIN 
+PRO_CALC_IPI(6,3700,1278,750,.17,444);
+END;
+
+BEGIN 
+PRO_CALC_IPI(7,1135,207,50,.17,555);
+END;
+
+
+
+SELECT * FROM BASE_CALC_IPI;
+/*
+COD_BASE_CALC   VALOR_PRODUTO   FRETE   SEGURO   OUTRAS_DESP   ALIQUOTA   VALOR_IPI   TOTAL_DA_NOTA   
+               1             1000      200       250            220        0,17         2,84          1672,84 
+               2             1500      278       350            222        0,17            4             2354 
+               3              500      178       350            222        0,17         2,13          1252,13 
+               4             2500      578       300            111        0,17         5,93          3494,93 
+               5              400       78       125            333        0,17         1,59           937,59 
+               6             3700     1278       750            444        0,17        10,49          6182,49 
+               7             1135      207        50            555        0,17         3,31          1950,31 
+
+7 linhas selecionadas. 
+Decorrido: 00:00:00.014
+*/
+
+
+
+
+
+
+
+
 
 
 

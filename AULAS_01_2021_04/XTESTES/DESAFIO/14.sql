@@ -26,5 +26,41 @@ IDFUN   NOMEFUN    SALARIO
 
 ================================================================================
 
+CREATE OR REPLACE FUNCTION SAL_AND_MEDIA(
+    D
+) RETURN 
 
-f
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
